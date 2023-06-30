@@ -1,67 +1,46 @@
 import axios from 'axios';
 import { useReducer } from 'react';
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect } from 'react';
 
-const PokeStates = createContext();
+const CardStates = createContext();
 
-export const themes = {
-  light: {
-    font: 'black',
-    background: 'white',
-  },
-  dark: {
-    font: 'white',
-    background: 'black',
-  },
+const InitialCardState = {
+  cardList: [],
+  card: {},
 };
 
-const InitialPokeState = {
-  pokeList: [],
-  pokemon: {},
-};
-
-const pokeReducer = (state, action) => {
+const cardReducer = (state, action) => {
   switch (action.type) {
     case 'GET_LIST':
-      return { pokeList: action.payload, pokemon: state.pokemon };
-    case 'GET_POKE':
-      return { pokeList: state.pokeList, pokemon: action.payload };
+      return { cardList: action.payload, card: state.card };
+    case 'GET_CARD':
+      return { cardList: state.cardList, card: action.payload };
     default:
       throw new Error();
   }
 };
 
-const Context = ({ children }) => {
-  const [theme, setTheme] = useState(themes.light);
-  const handleChangeTheme = () => {
-    if (theme === themes.dark) setTheme(themes.light);
-    if (theme === themes.light) setTheme(themes.dark);
-  };
-  const [pokeState, pokeDispatch] = useReducer(pokeReducer, InitialPokeState);
+const FetchContext = ({ children }) => {
+  const [cardState, cardDispatch] = useReducer(cardReducer, InitialCardState);
   const urlList = 'https://jsonplaceholder.typicode.com/users';
 
   useEffect(() => {
     axios(urlList)
-      .then((res) =>
-        pokeDispatch({ type: 'GET_LIST', payload: res.data.results })
-      )
+      .then((res) => cardDispatch({ type: 'GET_LIST', payload: res.data }))
       .catch((err) => console.log(err));
   }, []);
 
-  console.log(pokeState);
   return (
-    <PokeStates.Provider
+    <CardStates.Provider
       value={{
-        pokeState,
-        pokeDispatch,
-        theme,
-        handleChangeTheme,
+        cardState,
+        cardDispatch,
       }}
     >
       {children}
-    </PokeStates.Provider>
+    </CardStates.Provider>
   );
 };
-export default Context;
+export default FetchContext;
 
-export const usePokeStates = () => useContext(PokeStates);
+export const useCardStates = () => useContext(CardStates);
