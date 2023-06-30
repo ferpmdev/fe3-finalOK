@@ -1,14 +1,19 @@
-import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import { myRoutes } from '../Routes/utilties/myRoutes';
-import ThemeContext from '../Context/ThemeContext/themeContext';
-
+import { useThemeStates } from '../Context/ThemeContext/themeContext';
+import { themes } from '../Context/ThemeContext/themes';
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 const Navbar = () => {
-  const { theme, handleChangeTheme } = useContext(ThemeContext);
+  const { theme, setTheme } = useThemeStates();
+
+  const handleThemeChange = () => {
+    const newTheme = theme === themes.light ? themes.dark : themes.light;
+    setTheme(newTheme);
+  };
+
   return (
-    <nav>
+    <nav style={{ background: theme.background, color: theme.font }}>
       <div className={styles.navbarLinksContainer}>
         <Link
           className={styles.navbarBrand}
@@ -35,7 +40,7 @@ const Navbar = () => {
       {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
       {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
       <button
-        onClick={handleChangeTheme}
+        onClick={handleThemeChange}
         style={{ background: theme.background, color: theme.font }}
       >
         Change theme

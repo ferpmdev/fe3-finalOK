@@ -8,7 +8,6 @@ const Detail = () => {
   const [dentista, setDentista] = useState('');
 
   const paramsId = useParams();
-  console.log(paramsId);
 
   const urlId = `https://jsonplaceholder.typicode.com/users/${paramsId.id}`;
 
@@ -16,15 +15,15 @@ const Detail = () => {
     axios(urlId).then((res) => setDentista(res.data));
   }, []);
 
-  // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
-
   return (
     <>
-      <h1>Detail Dentist id </h1>
+      {console.log(dentista)}
+      <h1>Detail Dentist</h1>
       <h1>dentista</h1>
-      <h1>{dentista.name}</h1>
-      {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
-      {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
+      <h3>Nombre: {dentista.name}</h3>
+      <h3>Apellido: {dentista.username}</h3>
+      <h3>Email: {dentista.email}</h3>
+      <h3>Website: {dentista.website}</h3>
     </>
   );
 };
