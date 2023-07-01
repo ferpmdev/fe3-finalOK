@@ -17,7 +17,6 @@ const Detail = () => {
 
   return (
     <>
-      {console.log(dentista)}
       <h1>Detail Dentist</h1>
       <h1>dentista</h1>
       <h3>Nombre: {dentista.name}</h3>

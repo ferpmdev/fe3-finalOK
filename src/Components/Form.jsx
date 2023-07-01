@@ -9,13 +9,22 @@ const Form = ({ user, setUser, handleSubmit }) => {
       [event.target.name]: event.target.value,
     }));
   };
-  console.log(user.name);
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input name="name" type="text" onChange={handleChange} placeholder='Ingrese su nombre' />
-        <input name="email" type="email" onChange={handleChange} placeholder='Ingrese su e-mail'/>
+        <input
+          name="name"
+          type="text"
+          onChange={handleChange}
+          placeholder="Ingrese su nombre"
+        />
+        <input
+          name="email"
+          type="email"
+          onChange={handleChange}
+          placeholder="Ingrese su e-mail"
+        />
         <button>enviar</button>
       </form>
     </div>

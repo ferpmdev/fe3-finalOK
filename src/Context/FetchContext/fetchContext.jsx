@@ -1,26 +1,26 @@
 import axios from 'axios';
-import { useReducer } from 'react';
-import { createContext, useContext, useEffect } from 'react';
+import { createContext, useContext, useEffect, useReducer } from 'react';
 
-const CardStates = createContext();
+const CardStates = createContext(undefined);
 
 const InitialCardState = {
   cardList: [],
   card: {},
+  fav: JSON.parse(localStorage.getItem('fav')) || [],
 };
 
 const cardReducer = (state, action) => {
   switch (action.type) {
     case 'GET_LIST':
-      return { cardList: action.payload, card: state.card };
-    case 'GET_CARD':
-      return { cardList: state.cardList, card: action.payload };
+      return { ...state, cardList: action.payload };
+    case 'ADD_FAV':
+      return { ...state, fav: [...state.fav, action.payload] };
     default:
       throw new Error();
   }
 };
 
-const FetchContext = ({ children }) => {
+export const FetchContext = ({ children }) => {
   const [cardState, cardDispatch] = useReducer(cardReducer, InitialCardState);
   const urlList = 'https://jsonplaceholder.typicode.com/users';
 
@@ -29,6 +29,10 @@ const FetchContext = ({ children }) => {
       .then((res) => cardDispatch({ type: 'GET_LIST', payload: res.data }))
       .catch((err) => console.log(err));
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem('fav', JSON.stringify(cardState.fav));
+  }, [cardState.fav]);
 
   return (
     <CardStates.Provider
@@ -41,6 +45,5 @@ const FetchContext = ({ children }) => {
     </CardStates.Provider>
   );
 };
-export default FetchContext;
 
 export const useCardStates = () => useContext(CardStates);

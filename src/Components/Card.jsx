@@ -1,20 +1,22 @@
 import { Link } from 'react-router-dom';
 import { myRoutes } from '../Routes/utilties/myRoutes';
 import { useThemeStates } from '../Context/theme/ThemeContext.jsx';
-import { useFavState } from '../Context/FavsContext/FavContex';
+import { useCardStates } from '../Context/fetchContext/FetchContext';
 
 const Card = ({ item }) => {
   const { theme } = useThemeStates();
-  const { favsState, favsDispatch } = useFavState();
+
+  const { cardState, cardDispatch } = useCardStates();
+  console.log(cardState);
 
   const { name, username, id } = item;
 
   const addFav = () => {
-    const findFav = favsState.favs.find((favs) => favs.id === item.id);
-    if (!findFav) {
-      favsDispatch({ type: 'ADD_FAV', payload: item });
+    const findOdon = cardState.fav.find((odont) => odont.id === item.id);
+    if (!findOdon) {
+      cardDispatch({ type: 'ADD_FAV', payload: item });
     } else {
-      alert('Ya está agregado');
+      alert('Ya es favorita');
     }
   };
 

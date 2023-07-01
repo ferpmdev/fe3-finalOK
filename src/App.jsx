@@ -5,29 +5,27 @@ import Detail from './Routes/Detail';
 import Layout from './Layout/Layout';
 import Favs from './Routes/Favs';
 import { myRoutes } from './Routes/utilties/myRoutes';
-import FetchContext from './Context/FetchContext/fetchContext';
+// import FetchContext from './Context/FetchContext/fetchContext';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import ThemeContext from './Context/theme/ThemeContext.jsx';
-import FavsContext from './Context/FavsContext/FavContex';
+import { FetchContext } from './Context/fetchContext/FetchContext';
 
 function App() {
   return (
     <FetchContext>
       <ThemeContext>
-        <FavsContext>
-          <Layout>
-            <Navbar />
-            <Routes>
-              <Route path={myRoutes.home} element={<Home />} />
-              <Route path={myRoutes.contact} element={<Contact />} />
-              <Route path={`${myRoutes.detail}:id`} element={<Detail />} />
-              <Route path={myRoutes.favs} element={<Favs />} />
-              {/* <Route path={myRoutes.pageNotFound} element={<PageNotFound />} /> */}
-            </Routes>
-          </Layout>
-          <Footer />
-        </FavsContext>
+        <Layout>
+          <Navbar />
+          <Routes>
+            <Route path={myRoutes.home} element={<Home />} />
+            <Route path={myRoutes.contact} element={<Contact />} />
+            <Route path={`${myRoutes.detail}:id`} element={<Detail />} />
+            <Route path={myRoutes.favs} element={<Favs />} />
+            {/* <Route path={myRoutes.pageNotFound} element={<PageNotFound />} /> */}
+          </Routes>
+        </Layout>
+        <Footer />
       </ThemeContext>
     </FetchContext>
   );

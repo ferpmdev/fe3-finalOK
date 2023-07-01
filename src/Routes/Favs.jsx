@@ -1,12 +1,11 @@
-import Card from '../Components/Card';
-import { useFavState } from '../Context/FavsContext/FavContex';
+import { useCardStates } from '../Context/fetchContext/FetchContext';
 import { useThemeStates } from '../Context/theme/ThemeContext.jsx';
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Favs = () => {
   const { theme } = useThemeStates();
-  const { favsState } = useFavState();
+  const { cardState } = useCardStates();
 
   return (
     <div
@@ -18,8 +17,8 @@ const Favs = () => {
     >
       <h1 style={{ margin: '25px' }}>Dentists Favs</h1>
       <div className="card-grid">
-        {favsState.favs &&
-          favsState.favs.map((item) => (
+        {cardState.fav &&
+          cardState.fav.map((item) => (
             <div className="containerFavs" key={item.id}>
               <img
                 src="./images/doctor.jpg"

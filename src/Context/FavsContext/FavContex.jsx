@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useReducer } from 'react';
 const FavsStates = createContext();
 
 const InitialFavsState = {
-  favs: JSON.parse(localStorage.getItem('fav')) || [],
+  // favs: JSON.parse(localStorage.getItem('fav')) || [],
 };
 
 const favsReducer = (state, action) => {
