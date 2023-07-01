@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { myRoutes } from '../Routes/utilties/myRoutes';
-import { useThemeStates } from '../Context/ThemeContext/ThemeContext';
+import { useThemeStates } from '../Context/themeContext/ThemeContext';
 import { useFavState } from '../Context/FavsContext/FavContex';
 
 const Card = ({ item }) => {

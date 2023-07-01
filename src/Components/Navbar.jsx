@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import { myRoutes } from '../Routes/utilties/myRoutes';
-import { useThemeStates } from '../Context/ThemeContext/ThemeContext';
-import { themes } from '../Context/ThemeContext/themes';
+import { useThemeStates } from '../Context/themeContext/ThemeContext';
+import { themes } from '../Context/themeContext/themes';
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 const Navbar = () => {
   const { theme, setTheme } = useThemeStates();
@@ -13,7 +13,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav style={{ background: theme.background, color: theme.font, boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)' }}>
+    <nav
+      style={{
+        background: theme.background,
+        color: theme.font,
+        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+      }}
+    >
       <div className={styles.navbarLinksContainer}>
         <Link
           className={styles.navbarBrand}
@@ -41,7 +47,11 @@ const Navbar = () => {
       {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
       <button
         onClick={handleThemeChange}
-        style={{ background: theme.background, color: theme.font, marginRight: '5vw' }}
+        style={{
+          background: theme.background,
+          color: theme.font,
+          marginRight: '5vw',
+        }}
       >
         Change theme
       </button>

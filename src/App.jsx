@@ -8,7 +8,7 @@ import { myRoutes } from './Routes/utilties/myRoutes';
 import FetchContext from './Context/FetchContext/fetchContext';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
-import ThemeContext from './Context/ThemeContext/ThemeContext';
+import ThemeContext from './Context/themeContext/ThemeContext';
 import FavsContext from './Context/FavsContext/FavContex';
 
 function App() {
