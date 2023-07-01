@@ -11,7 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.favButton{
+.favButton {
   background-color: rgba(136, 136, 136, 0.116);
   padding: 10px;
   border: none;
@@ -19,26 +19,39 @@ code {
   cursor: pointer;
 }
 
-h1{
+h1,
+h2,
+h5,
+p,
+h3 {
   text-align: center;
+  margin: 10px;
 }
 
-nav{
+nav {
   display: flex;
-  width: 80vw;
+  width: 100vw;
   justify-content: flex-start;
-  padding: 1rem;
+  padding: 1rem 0;
+  margin: 0 auto;
 }
 
-a{
+a,
+button {
   color: #000;
   text-decoration: none;
   margin: 5px;
   cursor: pointer;
+  font-weight: lighter;
+  padding: 10px;
+  border-radius: 5px;
 }
-a:hover{
+
+a:hover,
+button:hover {
+  font-weight: bolder;
   color: rgb(136, 136, 136);
-} 
+}
 
 footer {
   display: flex;
@@ -52,16 +65,16 @@ footer {
   margin-top: 2rem;
 }
 
-footer > img{
+footer > img {
   width: 200px;
   margin: 0;
 }
-footer > p{
+footer > p {
   margin: 0;
   padding-top: 0.7rem;
 }
 
-form{
+form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -70,40 +83,58 @@ form{
   margin: 0 auto;
 }
 
-.card{
+.containerCards {
   display: flex;
-  justify-content: space-around;
   flex-direction: column;
-  align-items: center;
-  width: 200px;
-  padding: 0.5rem 0.5rem 0 0.5rem;
   border: 0.5px solid rgb(136, 136, 136);
+  align-items: center;
+  border-radius: 22px;
 }
 
-.card:hover{
+.card {
+  display: flex;
+  width: 200px;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.5rem 0.5rem 0 0.5rem;
+}
+
+.card:hover {
   border: 0.5px solid rgb(206, 217, 142);
 }
 
-.card-grid{
+.card-grid {
   display: flex;
   justify-content: space-evenly;
-  gap: 1rem;
+  gap: 1.5vw;
   width: 90vw;
   height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
 }
 
-table {
- border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    display: table;
-    border: 1px solid #ccc;
-
+.containerFavs {
+  display: flex;
+  flex-direction: column;
+  border: 0.5px solid rgb(136, 136, 136);
+  align-items: center;
+  border-radius: 22px;
+  width: 250px;
+  height: 400px;
+  padding: 1rem;
 }
 
-td, th {
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  display: table;
+  border: 1px solid #ccc;
+}
+
+td,
+th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
@@ -113,10 +144,18 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.dark{
-  background-color: #12121296;
+/* .dark {
+  background-color: #033f3f;
   color: white;
 }
 .dark > a {
   color: white;
+  back: rgb(42, 220, 233);
+} */
+
+input {
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 5px 0;
 }
