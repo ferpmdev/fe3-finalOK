@@ -35,7 +35,9 @@ const Card = ({ item }) => {
         <img
           src="./images/doctor.jpg"
           alt=""
-          style={{ width: '195px', borderRadius: '15px' }}
+          style={{ width: '195px', 
+          boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+          borderRadius: '15px' }}
         />
         <div
           style={{

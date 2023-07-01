@@ -16,7 +16,7 @@ const Home = () => {
         paddingBottom: '80px',
       }}
     >
-      <h1>Home</h1>
+      <h1 style={{margin: '25px'}}>Home</h1>
       <div className="card-grid">
         {cardState.cardList &&
           cardState.cardList.map((item) => <Card key={item.id} item={item} />)}
