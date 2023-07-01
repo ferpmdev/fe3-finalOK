@@ -1,6 +1,6 @@
 import Card from '../Components/Card';
 import { useCardStates } from '../Context/FetchContext/fetchContext';
-import { useThemeStates } from '../Context/ThemeContext/themeContext';
+import { useThemeStates } from '../Context/ThemeContext/ThemeContext';
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 

@@ -1,7 +1,7 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import { myRoutes } from '../Routes/utilties/myRoutes';
-import { useThemeStates } from '../Context/ThemeContext/themeContext';
+import { useThemeStates } from '../Context/ThemeContext/ThemeContext';
 import { themes } from '../Context/ThemeContext/themes';
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 const Navbar = () => {
