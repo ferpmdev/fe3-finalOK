@@ -83,14 +83,21 @@ form {
   margin: 0 auto;
 }
 
+.containerCards {
+  display: flex;
+  flex-direction: column;
+  border: 0.5px solid rgb(136, 136, 136);
+  align-items: center;
+  border-radius: 22px;
+}
+
 .card {
   display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
   width: 200px;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
   padding: 0.5rem 0.5rem 0 0.5rem;
-  border: 0.5px solid rgb(136, 136, 136);
 }
 
 .card:hover {
@@ -105,6 +112,17 @@ form {
   height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
+}
+
+.containerFavs {
+  display: flex;
+  flex-direction: column;
+  border: 0.5px solid rgb(136, 136, 136);
+  align-items: center;
+  border-radius: 22px;
+  width: 250px;
+  height: 400px;
+  padding: 1rem;
 }
 
 table {
@@ -141,4 +159,3 @@ input {
   text-align: center;
   margin: 5px 0;
 }
-

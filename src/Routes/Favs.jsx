@@ -14,8 +14,23 @@ const Favs = () => {
       <div className="card-grid">
         {favsState.favs &&
           favsState.favs.map((item) => (
-            <div key={item.id}>
-              <h1>{item.name}</h1>
+            <div className="containerFavs" key={item.id}>
+              <img
+                src="./images/doctor.jpg"
+                alt=""
+                style={{ width: '195px', borderRadius: '15px' }}
+              />
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                }}
+              >
+                <h3>{item.name}</h3>
+                <h5>user: {item.username}</h5>
+                <h5>user-id: {item.id}</h5>
+              </div>
               {/* <Card item={item} /> */}
             </div>
           ))}
