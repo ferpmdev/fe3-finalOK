@@ -14,8 +14,8 @@ const Form = ({ user, setUser, handleSubmit }) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input name="name" type="text" onChange={handleChange} />
-        <input name="email" type="email" onChange={handleChange} />
+        <input name="name" type="text" onChange={handleChange} placeholder='Ingrese su nombre' />
+        <input name="email" type="email" onChange={handleChange} placeholder='Ingrese su e-mail'/>
         <button>enviar</button>
       </form>
     </div>

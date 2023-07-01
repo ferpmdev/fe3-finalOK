@@ -1,10 +1,10 @@
 export const themes = {
   light: {
     font: 'black',
-    background: 'white',
+    background: '#C2D7D9',
   },
   dark: {
     font: 'white',
-    background: 'black',
+    background: '#033757',
   },
 };

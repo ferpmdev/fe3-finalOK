@@ -21,16 +21,18 @@ const Contact = () => {
       setError(true);
     }
   };
-  console.log(user);
+  
 
   return (
-    <div>
-      <h2>Want to know more?</h2>
-      <p>Send us your questions and we will contact you</p>
+    <div style={{height: '500px'}}>
+      <h2 style={{marginTop: '70px'}}>Want to know more?</h2>
+      <p style={{marginBottom: '60px'}}>Send us your questions and we will contact you</p>
+      
       <Form user={user} setUser={setUser} handleSubmit={handleSubmit} />
       {show && (
-        <h1>{`Gracias ${user.name}, te contactaremos cuando antes vía mail`}</h1>
+        <h1 style={{marginTop: '30px'}}>{`Gracias ${user.name}, te contactaremos cuando antes vía mail`}</h1>
       )}
+      {error && <h1 style={{marginTop: '30px'}}>El nombre deber tener al menos cinco caracteres</h1>}
     </div>
   );
 };

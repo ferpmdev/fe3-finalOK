@@ -15,13 +15,15 @@ const Card = ({ item }) => {
     <Link
       className="card"
       to={`${myRoutes.detail}${item.id}`}
-      style={{ background: theme.background, color: theme.font }}
+      style={{ background: theme.background, color: theme.font, borderRadius: '20px', height: '400px', width: '250px'}}
     >
       {/* <Link className="card" to={myRoutes.detail}> */}
-      <img src="./images/doctor.jpg" alt="" style={{ width: '80px' }} />
-      <h1>{name}</h1>
-      <h3>{username}</h3>
-      <h3>{id}</h3>
+      <img src="./images/doctor.jpg" alt="" style={{ width: '195px' , borderRadius: '15px'}} />
+      <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+        <h3>{name}</h3>
+        <h5>user: {username}</h5>
+        <h5>user-id: {id}</h5>
+      </div>
 
       {/* En cada card deberan mostrar en name - username y el id */}
 
@@ -31,10 +33,11 @@ const Card = ({ item }) => {
       <button
         onClick={addFav}
         className="favButton"
-        style={{ background: theme.background, color: theme.font }}
+        style={{ width: '70px', background: theme.background, color: theme.font}}
       >
         Add fav
       </button>
+      
     </Link>
   );
 };
