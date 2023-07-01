@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { useThemeStates } from '../Context/themeContext/ThemeContext';
+import { useThemeStates } from '../Context/themeContext/ThemeContext.jsx';
 
 const Layout = ({ children }) => {
   const { theme } = useThemeStates();

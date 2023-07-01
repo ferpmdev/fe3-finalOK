@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { myRoutes } from '../Routes/utilties/myRoutes';
-import { useThemeStates } from '../Context/themeContext/ThemeContext';
+import { useThemeStates } from '../Context/themeContext/ThemeContext.jsx';
 import { useFavState } from '../Context/FavsContext/FavContex';
 
 const Card = ({ item }) => {
@@ -35,9 +35,11 @@ const Card = ({ item }) => {
         <img
           src="./images/doctor.jpg"
           alt=""
-          style={{ width: '195px', 
-          boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-          borderRadius: '15px' }}
+          style={{
+            width: '195px',
+            boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+            borderRadius: '15px',
+          }}
         />
         <div
           style={{
