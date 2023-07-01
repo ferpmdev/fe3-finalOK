@@ -1,8 +1,7 @@
-import { useCardStates } from '../Context/fetchContext/FetchContext';
+import { useCardStates } from '../Context/fetchContext/FetchContext.jsx';
 import { useThemeStates } from '../Context/theme/ThemeContext.jsx';
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
-
 const Favs = () => {
   const { theme } = useThemeStates();
   const { cardState } = useCardStates();
