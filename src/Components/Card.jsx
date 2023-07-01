@@ -1,14 +1,21 @@
 import { Link } from 'react-router-dom';
 import { myRoutes } from '../Routes/utilties/myRoutes';
-import { useThemeStates } from '../Context/ThemeContext/themeContext';
+import { useThemeStates } from '../Context/ThemeContext/ThemeContext';
+import { useFavState } from '../Context/FavsContext/FavContex';
 
 const Card = ({ item }) => {
   const { theme } = useThemeStates();
+  const { favsState, favsDispatch } = useFavState();
 
   const { name, username, id } = item;
 
   const addFav = () => {
-    // Aqui iria la logica para agregar la Card en el localStorage
+    const findFav = favsState.favs.find((favs) => favs.id === item.id);
+    if (!findFav) {
+      favsDispatch({ type: 'ADD_FAV', payload: item });
+    } else {
+      alert('Ya está agregado');
+    }
   };
 
   return (
@@ -36,9 +43,9 @@ const Card = ({ item }) => {
         style={{ width: '70px', background: theme.background, color: theme.font}}
       >
         Add fav
-      </button>
-      
+      </button> 
     </Link>
+    </div>
   );
 };
 
