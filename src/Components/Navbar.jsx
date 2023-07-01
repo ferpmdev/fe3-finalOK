@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav style={{ background: theme.background, color: theme.font }}>
+    <nav style={{ background: theme.background, color: theme.font, boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)' }}>
       <div className={styles.navbarLinksContainer}>
         <Link
           className={styles.navbarBrand}
@@ -41,7 +41,7 @@ const Navbar = () => {
       {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
       <button
         onClick={handleThemeChange}
-        style={{ background: theme.background, color: theme.font }}
+        style={{ background: theme.background, color: theme.font, marginRight: '5vw' }}
       >
         Change theme
       </button>

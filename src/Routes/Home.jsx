@@ -9,7 +9,7 @@ const Home = () => {
   const { theme } = useThemeStates();
 
   return (
-    <main style={{ background: theme.background, color: theme.font }}>
+    <main style={{ background: theme.background, color: theme.font, paddingBottom: '80px' }}>
       <h1>Home</h1>
       <div className="card-grid">
         {cardState.cardList &&
